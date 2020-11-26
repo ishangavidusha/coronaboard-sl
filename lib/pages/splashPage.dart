@@ -33,7 +33,13 @@ class _SplashPageState extends State<SplashPage> {
             Container(
               width: devWidth > 800 ? 800 : devWidth,
               height: 400,
-              child: Image.asset('asset/images/keep_social_distance.png', fit: BoxFit.fitHeight,),
+              child: Center(
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  child: Image.asset('asset/images/keep_social_distance.png', fit: BoxFit.contain,)
+                )
+              ),
             ),
             SizedBox(
               height: 40,
@@ -49,6 +55,9 @@ class _SplashPageState extends State<SplashPage> {
                     fontSize: 16,
                     fontWeight: FontWeight.bold
                   ),
+                ),
+                SizedBox(
+                  width: 10,
                 ),
                 Container(
                   height: 20,

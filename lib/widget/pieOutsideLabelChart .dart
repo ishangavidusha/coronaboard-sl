@@ -30,7 +30,7 @@ class PieOutsideLabelChart extends StatelessWidget {
       animate: true,
       defaultRenderer: charts.ArcRendererConfig(
         arcRendererDecorators: [
-          charts.ArcLabelDecorator(labelPosition: charts.ArcLabelPosition.outside),
+          charts.ArcLabelDecorator(labelPosition: charts.ArcLabelPosition.outside, outsideLabelStyleSpec: charts.TextStyleSpec(fontSize: 10, lineHeight: 1.0)),
         ],
       ),
     );
