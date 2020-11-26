@@ -1,15 +1,16 @@
 import 'package:coronaboard/service/apiService.dart';
 import 'package:coronaboard/util/appData.dart';
+import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:coronaboard/widget/simpleBarchart.dart';
+import 'package:coronaboard/widget/timeSeriesLines.dart';
 
-class DeathsCaseCount extends StatefulWidget {
+class TimeSeriesLineView extends StatefulWidget {
   @override
-  _DeathsCaseCountState createState() => _DeathsCaseCountState();
+  _TimeSeriesLineViewState createState() => _TimeSeriesLineViewState();
 }
 
-class _DeathsCaseCountState extends State<DeathsCaseCount> {
+class _TimeSeriesLineViewState extends State<TimeSeriesLineView> {
   ApiService apiService;
   int caseHistoryLenth = 60;
   @override
@@ -20,7 +21,7 @@ class _DeathsCaseCountState extends State<DeathsCaseCount> {
     return Column(
       children: [
         Text(
-          'Daily Deaths in Sri Lanka',
+          'Time Series Data in Sri Lanka',
           style: AppData.mainTextStyle.copyWith(
             fontSize: 18,
             fontWeight: FontWeight.bold
@@ -33,7 +34,7 @@ class _DeathsCaseCountState extends State<DeathsCaseCount> {
           width: devWidth > 800 ? 800 : devWidth,
           height: devHeight * 0.3,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          child: DeathsCount(apiHistoryData: apiService.apiHistoryData.data.getRange(0, apiService.apiHistoryData.data.length < caseHistoryLenth ? apiService.apiHistoryData.data.length : caseHistoryLenth).toList(),)
+          child: TimeSeriesLine(apiHistoryData: apiService.apiHistoryData.data.reversed.toList().getRange(apiService.apiHistoryData.data.length - caseHistoryLenth, apiService.apiHistoryData.data.length).toList(),)
         ),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20,),

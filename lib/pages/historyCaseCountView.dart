@@ -12,7 +12,7 @@ class HistroyCaseCount extends StatefulWidget {
 
 class _HistroyCaseCountState extends State<HistroyCaseCount> {
   ApiService apiService;
-  int caseHistoryLenth = 30;
+  int caseHistoryLenth = 60;
   @override
   Widget build(BuildContext context) {
     double devWidth = MediaQuery.of(context).size.width;
@@ -21,7 +21,7 @@ class _HistroyCaseCountState extends State<HistroyCaseCount> {
     return Column(
       children: [
         Text(
-          'Breakdown of the Daily New Cases in Sri Lanka',
+          'Daily New Cases in Sri Lanka',
           style: AppData.mainTextStyle.copyWith(
             fontSize: 18,
             fontWeight: FontWeight.bold

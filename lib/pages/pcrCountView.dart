@@ -12,7 +12,7 @@ class PCRCountView extends StatefulWidget {
 
 class _PCRCountViewState extends State<PCRCountView> {
   ApiService apiService;
-  int caseHistoryLenth = 30;
+  int caseHistoryLenth = 60;
   @override
   Widget build(BuildContext context) {
     double devWidth = MediaQuery.of(context).size.width;

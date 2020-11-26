@@ -7,6 +7,7 @@ import 'package:coronaboard/pages/pcrCountView.dart';
 import 'package:coronaboard/pages/historyCaseCountView.dart';
 import 'package:coronaboard/pages/recoveriesCountView.dart';
 import 'package:coronaboard/pages/deathsCountView.dart';
+import 'package:coronaboard/pages/timeSeriesLineView.dart';
 import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   color: Color(0xff242424),
+                  width: devWidth,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Column(
                     children: [
@@ -46,57 +48,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Text(
-                        'Dashboard',
-                        style: AppData.mainTextStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
                         'SRI LANKA',
                         style: AppData.mainTextStyle.copyWith(
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Last Update : ',
-                                  style: AppData.mainTextStyle.copyWith(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                                Text(
-                                  apiService.apiData.data.updateDateTime,
-                                  style: AppData.mainTextStyle.copyWith(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
                       ),
                     ],
                   ),
@@ -183,6 +140,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TimeSeriesLineView(),
                       SizedBox(
                         height: 20,
                       ),

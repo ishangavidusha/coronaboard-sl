@@ -35,6 +35,7 @@ class ApiService with ChangeNotifier {
   }
 
   Future<ApiData> getData() async {
+    print('fatching data..');
     try {
       http.Response response = await http.get(URL);
       final result = await getHistoryData();
