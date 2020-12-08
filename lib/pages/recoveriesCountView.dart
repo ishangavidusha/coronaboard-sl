@@ -1,6 +1,5 @@
 import 'package:coronaboard/service/apiService.dart';
 import 'package:coronaboard/util/appData.dart';
-import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:coronaboard/widget/simpleBarchart.dart';

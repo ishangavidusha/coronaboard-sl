@@ -1,4 +1,3 @@
-import 'package:coronaboard/pages/homePage.dart';
 import 'package:coronaboard/pages/splashPage.dart';
 import 'package:coronaboard/service/apiService.dart';
 import 'package:flutter/material.dart';

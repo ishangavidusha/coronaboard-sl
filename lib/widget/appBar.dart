@@ -12,15 +12,14 @@ class _MyAppBarState extends State<MyAppBar> {
   ApiService apiService;
   @override
   Widget build(BuildContext context) {
-    double devWidth = MediaQuery.of(context).size.width;
     double devHeight = MediaQuery.of(context).size.height;
     apiService = Provider.of<ApiService>(context);
     return SliverAppBar(
       backgroundColor: Color(0xff242424),
-      expandedHeight: devHeight * 0.08,
+      expandedHeight: devHeight * 0.2,
       stretch: true,
       pinned: true,
-      onStretchTrigger: () => apiService.getData(),
+      onStretchTrigger: () => apiService.getData(shouldUpdate: false),
       flexibleSpace: FlexibleSpaceBar(
         titlePadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         centerTitle: false,
@@ -62,7 +61,17 @@ class _MyAppBarState extends State<MyAppBar> {
             ),
           ],
         ),
-        background: Image.network('https://images.unsplash.com/photo-1561426802-392f5b6290cf', fit: BoxFit.cover, alignment: Alignment.bottomCenter,),
+        background: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.network('https://images.unsplash.com/photo-1561426802-392f5b6290cf', fit: BoxFit.cover, alignment: Alignment.bottomCenter,),
+            apiService.loading ? Container(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ) : Container()
+          ],
+        ),
       ),
     );
   }

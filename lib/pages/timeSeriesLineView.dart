@@ -1,6 +1,5 @@
 import 'package:coronaboard/service/apiService.dart';
 import 'package:coronaboard/util/appData.dart';
-import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:coronaboard/widget/timeSeriesLines.dart';
@@ -25,6 +24,73 @@ class _TimeSeriesLineViewState extends State<TimeSeriesLineView> {
           style: AppData.mainTextStyle.copyWith(
             fontSize: 18,
             fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 10,
+                      width: 10,
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.yellow,
+                      ),
+                    ),
+                    Container(
+                      child: Text('New Cases'),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 10,
+                      width: 10,
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Container(
+                      child: Text('Recoveries'),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 10,
+                      width: 10,
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.red,
+                      ),
+                    ),
+                    Container(
+                      child: Text('Deaths'),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
         SizedBox(

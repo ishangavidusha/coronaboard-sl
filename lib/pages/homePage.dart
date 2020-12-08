@@ -262,7 +262,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Container(
                         width: devWidth > 800 ? 800 : devWidth,
-                        height: devHeight * 0.6,
                         alignment: Alignment.center,
                         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                         child: StackedHorizontalBarChart(hospitalData: apiService.apiData.data.hospitalData,),

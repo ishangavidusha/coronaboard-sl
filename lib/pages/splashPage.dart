@@ -15,12 +15,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Provider.of<ApiService>(context, listen: false).getData();
+    Provider.of<ApiService>(context, listen: false).getData(shouldUpdate: false);
   }
   @override
   Widget build(BuildContext context) {
     double devWidth = MediaQuery.of(context).size.width;
-    double devHeight = MediaQuery.of(context).size.height;
     apiData ??= Provider.of<ApiService>(context).apiData;
     return apiData == null ? Scaffold(
       body: Center(
